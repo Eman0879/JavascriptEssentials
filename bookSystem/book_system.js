@@ -35,3 +35,17 @@ let books = [];
             document.getElementById('bookDescription').value = '';
             document.getElementById('pagesNumber').value = '';
  }
+
+        function deletebook(){
+            let index = document.getElementById('index').value;
+            if(index >= 0 && index < books.length && !isNaN(index))
+            {  books.splice(index,1);
+              showbooks();
+            }
+            else
+            {
+                console.log("Invalid index");
+            }
+        }
+
+        showbooks();
